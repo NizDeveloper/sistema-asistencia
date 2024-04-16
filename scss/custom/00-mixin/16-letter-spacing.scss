@@ -1,0 +1,14 @@
+@mixin letter-spacing($media, $letter-spacing){
+  $rem-value: ($letter-spacing / 16);
+  
+
+  @media screen and (min-width: $media){
+    letter-spacing: $rem-value + rem;
+  }
+}
+
+//Breakpoints
+$sm : 375px;
+$md : 768px;
+$lg : 1024px;
+$xl : 1440px;

@@ -1,0 +1,14 @@
+@mixin line-height($media, $lineheight){
+  $rem-value: ($lineheight / 16);
+  
+
+  @media screen and (min-width: $media){
+    line-height: $rem-value + rem;
+  }
+}
+
+//Breakpoints
+$sm : 375px;
+$md : 768px;
+$lg : 1024px;
+$xl : 1440px;

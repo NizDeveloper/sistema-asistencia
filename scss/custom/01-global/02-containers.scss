@@ -1,0 +1,62 @@
+.limiter-small{
+  max-width: 700px + 80px;
+  margin: 0 auto;
+}
+
+.limiter-small-2{
+  max-width: 760px + 80px;
+  margin: 0 auto;
+}
+
+.limiter-small-3{
+  max-width: 960px + 60px;
+}
+
+.limiter-medium{
+  max-width: 1110px + 80px;
+  margin: 0 auto;
+}
+
+.limiter-large{
+  max-width: 1426px;
+  margin: 0 auto;
+}
+
+.limiter-large-2{
+  max-width: 1510px;
+  margin: 0 auto;
+}
+
+.limiter-extra-large{
+  max-width: 1720px + 80px;
+  margin: 0 auto;
+}
+
+.limiter-extra-large-2{
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.container-fluid.limiter-medium.container-less{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+@include media-breakpoint-up(md) {
+  .container-fluid{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .container-fluid.limiter-medium.container-less{
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .container-fluid-md{
+    padding-left: 47px;
+    padding-right: 47px;
+  }
+}

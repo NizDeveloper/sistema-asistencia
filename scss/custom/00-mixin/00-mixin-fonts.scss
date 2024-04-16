@@ -10,7 +10,6 @@
   $remValue: ($size/16);
   font-size: $pxValue + px;
   font-size: $remValue + rem;
-
   $lineHeightValue: $lineheight / $size * 100;
   $percentage: unquote("%");
   line-height: #{$lineHeightValue}$percentage;

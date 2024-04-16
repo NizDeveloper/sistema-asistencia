@@ -1,0 +1,314 @@
+.accordion-block{
+  .accordion-block-title{
+    h2{
+      @include rem-2(32, 34);
+      font-family: proxima-nova-bold;
+    }
+  }
+
+  .accordion-block-subtext{
+    margin-top: 10px;
+
+    p{
+      @include rem-2(16, 25);
+    }
+  }
+
+  .accordion-block-items{
+    margin-top: 20px;
+
+    .accordion-block-item{
+      .accordion-block{
+        .accordion-block-header{
+          .accordion-block-button{
+            @include rem(18);
+            display: flex;
+            align-items: center;
+            padding: 30px 0;
+            width: 100%;
+            border: none;
+            transition: all 0.3s;
+            
+            &::before{
+              content: "";
+              width: 25px;
+              height: 25px;
+              @include mask-image(url('../images/icons/accordion-icon-expanded.svg'));
+              @include mask-size(25px 25px);
+              @include mask-repeat(no-repeat);
+              @include mask-position(center center);
+              margin-right: 10px;
+            }
+          }
+
+          .collapsed{
+            &::before{
+              @include mask-image(url('../images/icons/accordion-icon.svg'));
+            }
+          }
+        }
+
+        .accordion-block-body{
+          padding-bottom: 20px;
+
+          @include adyacent-top(20px);
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md){
+  .accordion-block{
+    .accordion-block-title{
+      h2{
+        @include rem-2(36, 38);
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(xl){
+  .accordion-block{
+    .accordion-block-title{
+      h2{
+        @include rem-2(44, 46);
+      }
+    }
+  }
+}
+
+/*
+ * Themes
+ */
+.bg-neutral-light, .bg-neutral-medium, .bg-neutral-dark{
+  .accordion-block{
+    .accordion-block-title{
+      h2{
+        color: $primary;
+      }
+    }
+
+    .accordion-block-subtext{
+      p{
+        color: $dark;
+      }
+    }
+
+    .accordion-block-items{
+      .accordion-block-item{
+        border-bottom: 1px solid $cta-dark;
+
+        .accordion-block{
+          .accordion-block-header{
+            .accordion-block-button{
+              background-color: $white;
+              color: $cta-dark;
+
+              &::before{
+                background: $cta-dark;
+              }
+
+              &:hover{
+                color: $cta-dark-hover;
+                background: rgba(0, 0, 0, 0.05);
+    
+                &::before{
+                  background: $cta-dark-hover;
+                }
+              }
+            }
+          }
+
+          .accordion-block-body{
+            p{
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.bg-neutral-medium{
+  .accordion-block{
+    .accordion-block-items{
+      .accordion-block-item{
+        .accordion-block{
+          .accordion-block-header{
+            .accordion-block-button{
+              background-color: #f8f9fa;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.bg-neutral-dark{
+  .accordion-block{
+    .accordion-block-items{
+      .accordion-block-item{
+        .accordion-block{
+          .accordion-block-header{
+            .accordion-block-button{
+              background-color: #e9ecef;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.bg-dark-1{
+  .accordion-block{
+    .accordion-block-title{
+      h2{
+        color: $white;
+      }
+    }
+
+    .accordion-block-subtext{
+      p{
+        color: $white;
+      }
+    }
+
+    .accordion-block-items{
+      .accordion-block-item{
+        border-bottom: 1px solid $tertiary;
+
+        .accordion-block{
+          .accordion-block-header{
+            .accordion-block-button{
+              background-color: $primary;
+              color: $tertiary;
+
+              &::before{
+                background: $tertiary;
+              }
+
+              &:hover{
+                color: #ffe0c6;
+                background: rgba(255, 255, 255, 0.05);
+    
+                &::before{
+                  background: #ffe0c6;
+                }
+              }
+            }
+          }
+
+          .accordion-block-body{
+            p{
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.bg-light-1{
+  .accordion-block{
+    .accordion-block-title{
+      h2{
+        color: $cta-dark-hover;
+      }
+    }
+
+    .accordion-block-subtext{
+      p{
+        color: $black;
+      }
+    }
+
+    .accordion-block-items{
+      .accordion-block-item{
+        border-bottom: 1px solid $cta-dark;
+
+        .accordion-block{
+          .accordion-block-header{
+            .accordion-block-button{
+              background-color: $secondary;
+              color: $cta-dark;
+
+              &::before{
+                background: $cta-dark;
+              }
+
+              &:hover{
+                color: $cta-dark-hover;
+                background: rgba(0, 0, 0, 0.05);
+    
+                &::before{
+                  background: $cta-dark-hover;
+                }
+              }
+            }
+          }
+
+          .accordion-block-body{
+            p{
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.bg-light-2{
+  .accordion-block{
+    .accordion-block-title{
+      h2{
+        color: $black;
+      }
+    }
+
+    .accordion-block-subtext{
+      p{
+        color: $black;
+      }
+    }
+
+    .accordion-block-items{
+      .accordion-block-item{
+        border-bottom: 1px solid $cta-dark;
+
+        .accordion-block{
+          .accordion-block-header{
+            .accordion-block-button{
+              background-color: $tertiary;
+              color: $cta-dark;
+
+              &::before{
+                background: $cta-dark;
+              }
+
+              &:hover{
+                color: $cta-dark-hover;
+                background: rgba(0, 0, 0, 0.05);
+    
+                &::before{
+                  background: $cta-dark-hover;
+                }
+              }
+            }
+          }
+
+          .accordion-block-body{
+            p{
+              color: $dark;
+            }
+          }
+        }
+      }
+    }
+  }
+}

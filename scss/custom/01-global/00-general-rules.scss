@@ -1,0 +1,93 @@
+h1, h2, h3, h4, h5, h6, p, a, span, button, textarea{
+  word-break: break-word;
+}
+
+// h1, .h1{
+//   @include rem-2(30, 32);
+// }
+
+h2, .h2{
+  @include rem-2(30, 32);
+}
+
+// h3, .h3{
+//   @include rem-2(30, 32);
+// }
+
+// h4, .h4{
+//   @include rem-2(30, 32);
+// }
+
+// h5, .h5{
+//   @include rem-2(30, 32);
+// }
+
+// h6, .h6{
+//   @include rem-2(30, 32);
+// }
+
+.btn{
+  padding: 7px 40px;
+}
+
+.btn-primary{
+  display: inline-block;
+  color: $white;
+  background-color: $cta-dark;
+  border: solid 4px $secondary;
+  @include border-radius(26px);
+
+  &:hover{
+    background-color: $cta-dark-hover;
+    border: solid 4px $secondary;
+  }
+}
+
+.btn-lg{
+  padding: 11px 40px;
+  @include rem-2(19, 22);
+  @include border-radius(26px);
+}
+
+.link-arrow{
+  display: inline-flex;
+  align-items: center;
+  @include rem-2(19, 30);
+  color: $cta-dark;
+
+  &::after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    background: $cta-dark;
+    @include mask-image(url('../images/icons/footer-arrow-right.svg'));
+    @include mask-size(20px 20px);
+    @include mask-repeat(no-repeat);
+    @include mask-position(center center);
+  }
+
+  &:hover{
+    color: $cta-dark-hover;
+
+    &::after{
+      background: $cta-dark-hover;
+    }
+  }
+}
+
+@include media-breakpoint-up(md){
+  h2, .h2{
+    @include rem-2(32, 38);
+  }
+}
+
+@include media-breakpoint-up(lg){
+  h2, .h2{
+    @include rem-2(36, 42);
+  }
+}
+
+.toolbar-toggle-orientation{
+  display: none !important;
+}

@@ -1,0 +1,245 @@
+.thumbnail-parallax{
+  width: 100%;
+  height: 38vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+
+
+  .thumbnail-parallax-image{
+    height: 100%;
+    width: 100%;
+    transform: translate3d(0px, 1.48199px, 0px) scale(1.2);
+
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.thumbnail-text-block{
+  padding-top: 36px;
+  position: relative;
+  z-index: 0;
+
+  .thumbnail-text-block-content{
+    padding: 65px 15px;
+    margin: 0px -17px;
+    border-radius: 10px;
+    border-top: 5px solid;
+    border-bottom: 5px solid;
+    background-color: $white;
+    box-shadow: 4px 3px 19px 0 rgba(0, 0, 0, 0.2);
+    border-color: $tertiary;
+
+    .thumbnail-title{
+      h2{
+        @include rem-2(32, 34);
+        font-family: proxima-nova-bold;
+        text-align: center;
+        color: $primary;
+      }
+    }
+
+    .thumbnail-items{
+      margin-top: 40px;
+
+      .field__items{
+        @include adyacent-top(39px);
+      }
+
+      .thumbnail-item{
+        .thumbnail-card-row{
+          .thumbnail-card-col-1{
+            display: none;
+
+            .thumbnail-card-image{
+              border-radius: 3px;
+              overflow: hidden;
+            }
+          }
+
+          .thumbnail-card-col-2{
+            @include adyacent-top(10px);
+
+            .thumbnail-card-title{
+              h3{
+                color: $black;
+                @include rem-2(22, 24);
+              }
+            }
+
+            .thumbnail-card-divider{
+              border-bottom: 1px solid $tertiary;
+            }
+  
+            .thumbnail-card-text{
+              p{
+                color: $black;
+                @include rem-2(16, 25);
+              }
+            }
+  
+            .thumbnail-card-cta{
+              a{
+               @include rem-2(19, 23); 
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .thumbnail-cta{
+      @include rem-2(19, 23);
+      text-align: center;
+      margin-top: 60px;
+    }
+  }
+}
+
+@include media-breakpoint-up(md){
+  .thumbnail-parallax{
+    height: 31vw;
+  }
+
+  .thumbnail-text-block{
+    padding: 0;
+    
+    .thumbnail-text-block-content{
+      padding: 66px 37px;
+      margin: 0;
+
+      .thumbnail-title{
+        h2{
+          @include rem-2(36, 38);
+        }
+      }
+
+      .thumbnail-items{
+        .thumbnail-item{
+          .thumbnail-card-row{
+            display: flex;
+            margin: 0 -15px;
+
+            .thumbnail-card-col-1{
+              display: block;
+              padding: 0 15px;
+
+              .thumbnail-card-image{
+                width: 255px;
+                height: 185px;
+              }
+            }
+
+            .thumbnail-card-col-2{
+              width: auto;
+              padding: 0 15px;
+
+              .thumbnail-card-title{
+                h3{
+                  @include rem-2(24, 26);
+                }
+              }
+
+              .thumbnail-card-cta{
+                a{
+                  @include rem-2(19, 30); 
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(xl){
+  .thumbnail-parallax{
+    height: 31vw;
+  }
+
+  .thumbnail-text-block{
+    .thumbnail-text-block-content{
+      padding: 64px 40px;
+      margin: 0 -40px;
+
+      .thumbnail-title{
+        h2{
+         @include rem-2(44, 46); 
+        }
+      }
+
+      .thumbnail-items{
+        .field__items{
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0 -15px;
+          @include adyacent-top(34px);
+
+          
+          .field__item{
+            width: 50%;
+            padding: 0 15px;
+            
+            &:nth-child(2){
+              margin-top: 0;
+            }
+          
+            .thumbnail-card-row{
+              .thumbnail-card-col-1{
+                .thumbnail-card-image{
+                  width: 165px;
+                  height: 185px;
+                }
+              }
+
+              .thumbnail-card-col-2{
+                .thumbnail-card-title{
+                  h3{
+                    font-weight: 600;
+                    @include rem-2(28, 30);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(xxl){
+  .thumbnail-parallax{
+    height: 31vw;
+  }
+
+  .thumbnail-text-block{
+    max-width: 1190px;
+    margin: 0 auto;
+
+    .thumbnail-text-block-content{
+      .thumbnail-items{
+        .field__items{
+          .field__item{
+            .thumbnail-card-row{
+              .thumbnail-card-col-1{
+                .thumbnail-card-image{
+                  width: 253px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .thumbnail-cta{
+        margin-top: 58px;
+      }
+    }
+  }
+}

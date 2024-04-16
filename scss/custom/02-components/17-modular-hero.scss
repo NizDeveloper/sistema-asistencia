@@ -1,0 +1,28 @@
+.field--name-field-modular-hero-img{
+  .hero{
+    .hero-image{
+      height: 446px;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl){
+  .field--name-field-modular-hero-img{
+    .hero{
+      .hero-image{
+        height: 43vw;
+        max-height: 476px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(xxl){
+  .field--name-field-modular-hero-img{
+    .hero{
+      .hero-image{
+        max-height: 630px;
+      }
+    }
+  }
+}

@@ -1,0 +1,361 @@
+.paragraph--type--carousel-block{
+  @include adyacent-top(40px);
+
+  .carousel-header{
+    @include adyacent-top(10px);
+    text-align: center;
+
+    h2{
+      font-family: proxima-nova-bold;
+      color: $primary;
+      @include rem-2(32, 34);
+    }
+
+    p{
+      @include rem-2(16, 25);
+    }
+  }
+
+  .carousel{
+    @include adyacent-top(20px);
+    overflow: hidden !important;
+    
+    .carousel-inner{
+      height: auto;
+
+      .carousel-item{
+        > *{
+          &:nth-child(odd){
+            display: none;
+          }
+          
+          &:nth-child(2){
+            &:hover{
+              .hover-card{
+                transform: translateY(-100%);
+              }
+            }
+          }
+        }
+
+        .card-container{
+          background: $white;
+          padding: 0 15px;
+
+          .card-inner{
+            height: 348px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+
+            .hover-card{
+              transition: transform .8s;
+              display: block !important;
+              position: absolute;
+              height: 100%;
+              width: 100%;
+              background: $primary;
+              color: $white;
+              padding: 40px;
+              @include adyacent-top(20px);
+
+              h3{
+                @include rem-2(22, 24);
+                font-family: proxima-nova-ltsemibold;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .carousel-btn-container{
+      display: flex;
+      justify-content: center;
+      @include adyacent-left(20px);
+
+      button{
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: solid 1px $primary;
+        background: rgba(0, 0, 0, .2);
+        opacity: 1;
+
+        &:hover{
+          background: $primary;
+
+          .prev-arrow-icon{
+            background: $white;
+          }
+
+          .next-arrow-icon{
+            background: $white;
+          }
+        }
+
+        .prev-arrow-icon{
+          width: 20px;
+          height: 20px;
+          background: $primary;
+
+          @include mask-image(url('../images/icons/icon-arrow-prev-hover.svg'));
+          @include mask-size(20px 20px);
+          @include mask-repeat(no-repeat);
+          @include mask-position(center center);
+        }
+
+        .next-arrow-icon{
+          width: 20px;
+          height: 20px;
+          background: $primary;
+
+          @include mask-image(url('../images/icons/icon-arrow-next-hover.svg'));
+          @include mask-size(20px 20px);
+          @include mask-repeat(no-repeat);
+          @include mask-position(center center);
+        }
+      }
+    }
+  }
+
+  .carousel-inner .carousel-item.active,
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    display: flex;
+  }
+
+  .carousel-inner .carousel-item-end.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(100%);
+  }
+
+  .carousel-inner .carousel-item-start.active, 
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-100%);
+  }
+}
+
+.bg-dark-1{
+  .paragraph--type--carousel-block{
+    .carousel-header{
+      h2{
+        color: $white;
+      }
+    } 
+    .carousel{
+      .carousel-inner{
+        .carousel-item{
+          .card-container{
+            background: $primary;
+
+            .card-inner{
+              .hover-card{
+                background: $white;
+                color: $black;
+              }
+            }
+          }
+        }
+      }
+
+      .carousel-btn-container{
+        button{
+          border: solid 1px $white;
+
+          &:hover{
+            background: $white;
+
+            .prev-arrow-icon{
+              background: $black;
+            }
+
+            .next-arrow-icon{
+              background: $black;
+            }
+          }
+
+          .prev-arrow-icon{
+            background: $white;
+          }
+
+          .next-arrow-icon{
+            background: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bg-light-2{
+  .paragraph--type--carousel-block{
+    .carousel{
+      .carousel-inner{
+        .carousel-item{
+          .card-container{
+            background: $tertiary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bg-light-1{
+  .paragraph--type--carousel-block{
+    .carousel{
+      .carousel-inner{
+        .carousel-item{
+          .card-container{
+            background: $secondary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bg-neutral-dark{
+  .paragraph--type--carousel-block{
+    .carousel{
+      .carousel-inner{
+        .carousel-item{
+          .card-container{
+            background: $gray-200;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bg-neutral-medium{
+  .paragraph--type--carousel-block{
+    .carousel{
+      .carousel-inner{
+        .carousel-item{
+          .card-container{
+            background: $gray-100;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md){
+  .paragraph--type--carousel-block{
+    .carousel-header{
+      h2{
+        @include rem-2(36, 38);
+      }
+    }
+
+    .carousel{
+      .carousel-inner{
+        display: flex;
+        width: 246vw;
+        left: 50%;
+        @include transform(translateX(-50%));
+
+        .carousel-item{
+          > *{
+            &:nth-child(odd){
+              opacity: .3;
+              display: block;
+            }
+          }
+
+          .card-container{
+            .card-inner{
+              height: 290px;
+
+              h3{
+                @include rem-2(24, 26);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(33%);
+    }
+    
+    .carousel-inner .carousel-item-start.active, 
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-33%);
+    }
+
+    .carousel-inner .carousel-item-end,
+    .carousel-inner .carousel-item-start{ 
+      > *{
+        opacity: .3;
+      }
+    }
+  }
+}
+
+.paragraph--type--carousel-block{
+  .carousel-inner .carousel-item-end,
+  .carousel-inner .carousel-item-start{ 
+    transform: translateX(0);
+  }
+}
+
+@include media-breakpoint-up(lg){
+  .paragraph--type--carousel-block{
+    .carousel-header{
+      h2{
+        @include rem-2(44, 46);
+      }
+    }
+
+    .carousel{
+      .carousel-inner{
+        width: 2280px;
+      
+        .carousel-item{
+          .card-container{
+            .card-inner{
+              height: 350px;
+
+              .hover-card{
+                padding: 60px;
+
+                h3{
+                  @include rem-2(28, 30);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(xxl){
+  .paragraph--type--carousel-block{
+    .carousel{
+      .carousel-inner{
+        .carousel-item{
+          .card-container{
+            .card-inner{
+              height: 419px;
+
+              .hover-card{
+                padding: 70px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

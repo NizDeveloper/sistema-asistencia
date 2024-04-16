@@ -1,0 +1,284 @@
+.four-column-block{
+  transform: translateY(11px);
+
+  .four-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include adyacent-top(47px);
+
+    .four-col{
+      width: 100%;
+
+      .four-col-content{
+        .four-card{
+          text-align: center;
+
+          .four-card-title{
+            h3{
+              font-family: proxima-nova-bold;
+              @include rem-2(72, 75);
+            }
+          }
+
+          .four-card-text{
+            margin-top: 7px;
+
+            p{
+              font-weight: 900;
+              @include rem-2(19, 21);
+              max-width: 60%;
+              display: inline-block;
+            }
+          }
+
+          .four-card-cta{
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md){
+  .four-column-block{
+    .four-row{
+      justify-content: start;
+      margin: 0 -15px;
+
+      .four-col{
+        padding: 0px 15px;
+        width: 50%;
+
+        &:nth-child(2){
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg){
+  .four-column-block{
+    .four-row{
+      justify-content: center;
+
+      .four-col{
+        width: 25%;
+        margin-top: 0;
+
+        .four-col-content{
+          .four-card{
+            .four-card-text{
+              p{
+                max-width: 90%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/*
+ * Themes title
+ */
+
+  .text-neutral-light{
+    color: $white;
+    background: $primary;
+  }
+
+  .text-neutral-medium{
+    color: $white;
+    background: $secondary;
+  }
+
+  .text-neutral-dark{
+    color: $white;
+    background: $tertiary;
+  }
+
+  .text-dark-1{
+    color: $primary;
+    background: $white;
+  }
+
+  .text-light-1{
+    color: $secondary;
+    background: $white;
+  }
+
+  .text-light-2{
+    color: $tertiary;
+    background: $white;
+  }
+
+/*
+ * Themes 
+ */
+
+.bg-neutral-light, .bg-neutral-medium, .bg-neutral-dark{
+  .four-card-title{
+    h3{
+      color: $primary;
+    }
+  }
+
+  .four-card-text{
+    p{
+      color: $primary;
+    }
+  }
+
+  .four-card-cta{
+    .link-arrow{
+      color: $cta-dark;
+
+      &::after{
+        background: $cta-dark;
+      }
+
+      &:hover{
+        color: $cta-dark-hover;
+
+        &::after{
+          background: $cta-dark-hover;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md){
+    .four-row{
+      .four-col{
+        &:nth-child(2){
+          border-left: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        &:nth-child(4){
+          border-left: 1px solid rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg){
+    .four-row{
+      & > *+ *{
+        border-left: 1px solid rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+.bg-dark-1{
+  .four-card-title{
+    h3{
+      color: $white;
+    }
+  }
+
+  .four-card-text{
+    p{
+      color: $white;
+    }
+  }
+
+  .four-card-cta{
+    .link-arrow{
+      color: $tertiary;
+
+      &::after{
+        background: $tertiary;
+      }
+
+      &:hover{
+        color: #ffe0c6;
+
+        &::after{
+          background: #ffe0c6;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md){
+    .four-row{
+      .four-col{
+        &:nth-child(2){
+          border-left: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        &:nth-child(4){
+          border-left: 1px solid rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg){
+    .four-row{
+      & > *+ *{
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+}
+
+.bg-light-1, .bg-light-2{
+  .four-card-title{
+    h3{
+      color: $primary;
+    }
+  }
+
+  .four-card-text{
+    p{
+      color: $primary;
+    }
+  }
+
+  .four-card-cta{
+    .link-arrow{
+      color: $cta-dark;
+
+      &::after{
+        background: $cta-dark;
+      }
+
+      &:hover{
+        color: $cta-dark-hover;
+
+        &::after{
+          background: $cta-dark-hover;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md){
+    .four-row{
+      .four-col{
+        &:nth-child(2){
+          border-left: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        &:nth-child(4){
+          border-left: 1px solid rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg){
+    .four-row{
+      & > *+ *{
+        border-left: 1px solid rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
